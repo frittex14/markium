@@ -1,6 +1,7 @@
 use anyhow::{anyhow, Result};
 use markdown::Options;
 use maud::{html, PreEscaped, DOCTYPE};
+use minify_html::{minify, Cfg};
 
 use crate::Args;
 
@@ -32,7 +33,12 @@ pub fn to_html(markdown: &str, args: &Args) -> Result<String> {
         }
       }
     }
-  };
+  }
+  .into_string();
 
-  Ok(document.into())
+  // Minify the html document. If fails, fallback to the original document
+  let output =
+    String::from_utf8(minify(document.as_bytes(), &Cfg::spec_compliant())).unwrap_or(document);
+
+  Ok(output)
 }
