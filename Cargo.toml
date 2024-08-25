@@ -12,3 +12,6 @@ maud = "0.26.0"
 minify-html = "0.15.0"
 tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
+
+[build-dependencies]
+minifier = "0.3.1"

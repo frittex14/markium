@@ -575,6 +575,7 @@ dependencies = [
  "clio",
  "markdown",
  "maud",
+ "minifier",
  "minify-html",
  "tracing",
  "tracing-subscriber",
@@ -613,6 +614,15 @@ name = "memchr"
 version = "2.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3"
+
+[[package]]
+name = "minifier"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9aa3f302fe0f8de065d4a2d1ed64f60204623cac58b80cd3c2a83a25d5a7d437"
+dependencies = [
+ "clap",
+]
 
 [[package]]
 name = "minify-html"

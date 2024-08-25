@@ -24,6 +24,10 @@ struct Args {
   /// Ignore input size constraints
   #[arg(long, short, default_value = "false")]
   force: bool,
+
+  /// Return clean HTML, without any JS or CSS
+  #[arg(long, short, default_value = "false")]
+  clean: bool,
 }
 
 fn main() -> Result<()> {
