@@ -97,6 +97,28 @@
   --previewSize-containerMaxHeight: var(--previewSize-containerMaxHeight-big);
 }
 
+@media (prefers-color-scheme: dark) {
+  #theme-switch:checked~#container {
+    --bgColor-default: var(--bgColor-default-light);
+    --bgColor-muted: var(--bgColor-muted-light);
+    --bgColor-neutral-muted: var(--bgColor-neutral-muted-light);
+    --fgColor-default: var(--fgColor-default-light);
+    --fgColor-muted: var(--fgColor-muted-light);
+    --fgColor-accent: var(--fgColor-accent-light);
+    --borderColor-default: var(--borderColor-default-light);
+    --borderColor-muted: var(--borderColor-muted-light);
+    --colorScheme-icon: var(--colorScheme-icon-light);
+    --underlineNav-borderColor-active: var(--underlineNav-borderColor-active-light);
+    --control-transparent-bgColor-hover: var(--control-transparent-bgColor-hover-light);
+  }
+
+  #preview-size:checked~#container {
+    --previewSize-size: var(--previewSize-size-light);
+    --previewSize-bodyOverflow: var(--previewSize-bodyOverflow-light);
+    --previewSize-containerMaxHeight: var(--previewSize-containerMaxHeight-light);
+  }
+}
+
 label[for=theme-switch],
 label[for=preview-size] {
   height: 32px;
