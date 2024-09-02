@@ -2,6 +2,7 @@ use anyhow::{anyhow, Result};
 use markdown::Options;
 use maud::{html, PreEscaped, DOCTYPE};
 use minify_html::{minify, Cfg};
+use regex::{Captures, Regex};
 
 use crate::Args;
 
@@ -22,6 +23,20 @@ pub fn to_html(markdown: &str, args: &Args) -> Result<String> {
 
   // Convert markdown to raw html
   let html = markdown::to_html_with_options(markdown, &options).map_err(|err| anyhow!(err))?;
+
+  // Regex to find <pre><code> blocks
+  let regex = Regex::new(r"<pre><code([\s\S]*?)>([\s\S]*?)</code></pre>")?;
+
+  // Trim end newlines from contents of <code> blocks
+  let html = regex
+    .replace_all(&html, |snippet: &Captures| {
+      format!(
+        "<pre><code{}>{}</code></pre>",
+        &snippet[1],
+        &snippet[2].trim_end()
+      )
+    })
+    .to_string();
 
   // Build the html document
   let document = html! {

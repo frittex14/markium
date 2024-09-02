@@ -7,7 +7,7 @@
   --fgColor-muted-light: #636c76;
   --fgColor-accent-light: #0969da;
   --borderColor-default-light: #d0d7de;
-  --borderColor-muted-light: #d0d7deb3;
+  --borderColor-muted-light: #d1d9e0b3;
   --colorScheme-icon-light: "🌝";
   --underlineNav-borderColor-active-light: #fd8c73;
   --control-transparent-bgColor-hover-light: #d0d7de33;
@@ -15,7 +15,7 @@
   /* Dark Mode */
   --bgColor-default-dark: #0d1117;
   --bgColor-muted-dark: #161b22;
-  --bgColor-neutral-muted-dark: #6e768166;
+  --bgColor-neutral-muted-dark: #656c7633;
   --fgColor-default-dark: #e6edf3;
   --fgColor-muted-dark: #8d96a0;
   --fgColor-accent-dark: #4493f8;
@@ -114,12 +114,6 @@
     --underlineNav-borderColor-active: var(--underlineNav-borderColor-active-light);
     --control-transparent-bgColor-hover: var(--control-transparent-bgColor-hover-light);
   }
-
-  #preview-size:checked~#container {
-    --previewSize-size: var(--previewSize-size-light);
-    --previewSize-bodyOverflow: var(--previewSize-bodyOverflow-light);
-    --previewSize-containerMaxHeight: var(--previewSize-containerMaxHeight-light);
-  }
 }
 
 label[for=theme-switch],
@@ -184,7 +178,9 @@ body {
   line-height: 1.5;
   word-wrap: break-word;
   margin: 0;
-  height: 100vh;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   overflow: var(--previewSize-bodyOverflow);
 }
 
@@ -193,7 +189,9 @@ body {
   padding: 1rem;
   background-color: var(--bgColor-default);
   color: var(--fgColor-default);
-  height: 100vh;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 #container>div {
@@ -501,4 +499,38 @@ sub {
   clip: rect(0, 0, 0, 0);
   word-wrap: normal;
   border: 0;
+}
+
+pre {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 1rem;
+  overflow: auto;
+  line-height: 1.45;
+  color: var(--fgColor-default);
+  background-color: var(--bgColor-muted);
+  word-break: normal;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 16px;
+}
+
+@-moz-document url-prefix() {
+  pre> :last-child {
+    margin-right: 1rem;
+  }
+}
+
+code {
+  font-size: 85%;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+}
+
+:not(pre)>code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: var(--bgColor-neutral-muted);
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
 }
