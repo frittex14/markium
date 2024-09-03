@@ -28,6 +28,10 @@ struct Args {
   /// Return clean HTML, without any JS or CSS
   #[arg(long, short, default_value = "false")]
   clean: bool,
+
+  /// Disable highlighting of code blocks
+  #[arg(long, short, default_value = "false")]
+  no_highlight: bool,
 }
 
 fn main() -> Result<()> {

@@ -7,6 +7,8 @@ use regex::{Captures, Regex};
 use crate::Args;
 
 const CSS: &str = include_str!(concat!(env!("OUT_DIR"), "/style.css"));
+const STARRY_NIGHT: &str = include_str!(concat!(env!("OUT_DIR"), "/starry-night.css"));
+const JS: &str = include_str!(concat!(env!("OUT_DIR"), "/main.mjs"));
 
 pub fn to_html(markdown: &str, args: &Args) -> Result<String> {
   // Try to get title from output path, otherwise fallback to "Markdown Preview"
@@ -27,7 +29,7 @@ pub fn to_html(markdown: &str, args: &Args) -> Result<String> {
   // Regex to find <pre><code> blocks
   let regex = Regex::new(r"<pre><code([\s\S]*?)>([\s\S]*?)</code></pre>")?;
 
-  // Trim end newlines from contents of <code> blocks
+  // Trim end whitespace from contents of <pre><code> blocks
   let html = regex
     .replace_all(&html, |snippet: &Captures| {
       format!(
@@ -47,6 +49,10 @@ pub fn to_html(markdown: &str, args: &Args) -> Result<String> {
         meta name="viewport" content="width=device-width, initial-scale=1";
         @if !args.clean {
           style type="text/css" { (PreEscaped(CSS)) }
+          @if !args.no_highlight {
+            style type="text/css" { (PreEscaped(STARRY_NIGHT)) }
+            (PreEscaped(format!("<script type=\"module\">{}</script>", JS)))
+          }
         }
         title { (title) }
       }
