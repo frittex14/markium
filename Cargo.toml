@@ -1,7 +1,12 @@
 [package]
 name = "markium"
 version = "0.1.0"
+authors = ["frittex (frittex14) <frittex14@gmail.com>"]
 edition = "2021"
+description = "CLI tool for previewing markdown files with GitHub's styling"
+readme = "README.md"
+license = "MIT"
+license-file = "LICENSE"
 
 [dependencies]
 anyhow = "1.0.86"
