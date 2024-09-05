@@ -509,7 +509,7 @@ pre {
   margin-top: 0;
   padding: 1rem;
   overflow: auto;
-  line-height: 1.45;
+  line-height: 1.25;
   color: var(--fgColor-default);
   background-color: var(--bgColor-muted);
   word-break: normal;
