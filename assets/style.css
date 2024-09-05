@@ -1,4 +1,7 @@
 :root {
+  /* Base HTML Theme */
+  color-scheme: light dark;
+
   /* Light Mode */
   --bgColor-default-light: #ffffff;
   --bgColor-muted-light: #f6f8fa;
