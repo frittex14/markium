@@ -40,6 +40,11 @@ This way, it can be updated with:
 git pull && cargo build --release # pull newest version and build the binary
 ```
 
+## TODOs
+
+- [ ] Add live preview server
+- [ ] Add option to auto-open output in browser
+
 ## Contributing
 
 See [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/) and [CONTRIBUTING.md](https://github.com/frittex14/markium/raw/master/CONTRIBUTING.md)
