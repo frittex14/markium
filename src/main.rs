@@ -49,6 +49,10 @@ fn main() -> Result<()> {
     bail!("Only files up to 500KiB are allowed. Use '--force' if you know what you're doing.")
   }
 
+  if input.len() == 0 && !args.force {
+    bail!("Input is empty. Use '--force' if you know what you're doing.")
+  }
+
   info!("Parsing input to html...");
   let html = parser::to_html(&input, &args).context("Couldn't parse input to html")?;
 
