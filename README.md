@@ -15,6 +15,10 @@ I feel safe to say that basic markdown parsing is already 100% complete,
 and only things like images, custom scripts, and other very specific GitHub
 features are missing. That's why I decided to already release it.
 
+## Examples
+
+See [the examples directory](https://github.com/frittex14/markium/tree/master/examples)
+
 ## Usage
 
 For details on how to use the CLI, and all available options, run:
