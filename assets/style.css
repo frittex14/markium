@@ -192,9 +192,7 @@ body {
   padding: 1rem;
   background-color: var(--bgColor-default);
   color: var(--fgColor-default);
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  height: 100vh;
 }
 
 #container>div {
