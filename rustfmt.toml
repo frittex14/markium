@@ -1,0 +1,6 @@
+format_strings = true
+match_block_trailing_comma = true
+imports_granularity = "Module"
+struct_field_align_threshold = 24
+tab_spaces = 2
+wrap_comments = true
