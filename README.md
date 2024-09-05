@@ -51,7 +51,7 @@ git pull && cargo build --release # pull newest version and build the binary
 
 ## Contributing
 
-See [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/) and [CONTRIBUTING.md](https://github.com/frittex14/markium/raw/master/CONTRIBUTING.md)
+See [How to Contribute to Open Source](https://opensource.guide/how-to-contribute/) and [CONTRIBUTING.md](https://github.com/frittex14/markium/blob/master/CONTRIBUTING.md)
 
 ## License
 
