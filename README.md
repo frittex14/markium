@@ -46,6 +46,7 @@ git pull && cargo build --release # pull newest version and build the binary
 
 ## TODOs
 
+- [ ] Add [mermaid.js](https://mermaid.js.org/) support
 - [ ] Add live preview server
 - [ ] Add option to auto-open output in browser
 
